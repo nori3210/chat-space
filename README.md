@@ -5,37 +5,40 @@
 |---------|------| -------- |
 | email | string | null :  false|
 | password | string | null :  false |
-| username | string | null :  false |
+| name | string | null :  false |
+| group_id | string | null :   false |
+
 ### Association
--  has_many  : groups
--  has_many  : messages
+-  has_many : messages
+-  has_many  : groups_users
+-  has_many  : groups ,  throught :   : groups_users
 
 ## groupsテーブル
 | Column | Type | Options |
 | -------- | ----- | -------- |
-| groupname |string | null :  false |
+| name | string | null :  false |
 | user_id | integer | null :  false ,  foreign_key :  true |
 ### Association
--  belongs_to  : user
--  has_many  : groups_massages
--  has_many  : massages ,  through :   : groups_messages
+-  belongs_to  : massages
+-  has_many  : groups_users
+-  has_many  : users ,  through :   : groups_users
 
-## messageテーブル
+## messagesテーブル
 | Column | Type | Options |
 | -------- | ----- | -------- |
 | body | text | null :  false |
 | image | string | null :  false |
-| user_id | integer | null :  false ,  foreign_key :  true|
+| user_id | integer | null :  false ,  foreign_key :  true |
+| group_id |integer | null :  false ,  foreign_key :  true |
 ### Association
 -  belongs_to  : user
--  has_many  : groups_massages
--  has_many  : groups ,  through :   : groups_messages
+-  belongs_to  : group
 
-## groups_messageテーブル
+## groups_usersテーブル
 | Column | Type | Options |
 | -------- | ----- | -------- |
 | group_id | integer | null: false, foreign_key: true|
-|message_id | integer |  null: false, foreign_key: true |
+| user_id | integer |  null: false, foreign_key: true |
 ### Association
 -  belongs_to  : group
--  belongs_to  : message
+-  belongs_to  : user
