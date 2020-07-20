@@ -17,15 +17,15 @@
 | -------- | ----- | -------- |
 | name | string | null :  false |
 ### Association
--  belongs_to  : massages
+-  has_many  : massages
 -  has_many  : groups_users
 -  has_many  : users ,  through :   : groups_users
 
 ## messagesテーブル
 | Column | Type | Options |
 | -------- | ----- | -------- |
-| body | text | null :  true |
-| image | string | null :  true |
+| body | text ||
+| image | string ||
 | user_id | integer | null :  false ,  foreign_key :  true |
 | group_id |integer | null :  false ,  foreign_key :  true |
 ### Association
@@ -35,7 +35,7 @@
 ## groups_usersテーブル
 | Column | Type | Options |
 | -------- | ----- | -------- |
-| group_id | integer | null: false, foreign_key: true|
+| group_id | integer | テキスト, 画像は単体で投稿, foreign_key: true|
 | user_id | integer |  null: false, foreign_key: true |
 ### Association
 -  belongs_to  : group
