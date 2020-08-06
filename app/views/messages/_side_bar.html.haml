@@ -4,17 +4,17 @@
       .user-name 
         = current_user.name 
       .icon-display 
-        = link_to " # ", class: "icon-display__btn icon-display__btn--edit" do
-          = icon('far', 'edit', class: "icon-display__btn--icon")
+        = link_to new_group_path do
+          = icon('far', 'edit',  class: "icon-display__btn")
         = link_to edit_user_path(current_user) do
-          = icon('fa', 'cog',class: "icon-display__btn--icon")
+          = icon('fa', 'cog',  class: "icon-display__btn")
   .side-ber__group-list
-    .side-ber__group-list__messages
-      .side-ber__group-list__messages__group-name techcamp
-      .side-ber__group-list__messages__message
-    .side-ber__group-list__messages
-      .side-ber__group-list__messages__group-name 
-      .side-ber__group-list__messages__message
-    .side-ber__group-list__messages
-      .side-ber__group-list__messages__group-name 
-      .side-ber__group-list__messages__message
+    - current_user.groups.each do |group|
+      .side-ber__group-list__messages
+        = link_to '#' do
+          .side-ber__group-list__messages__group-name 
+            = group.name
+          .side-ber__group-list__messages__message
+            メッセージはまだありません
+    
+    

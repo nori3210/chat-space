@@ -5,6 +5,7 @@
 .wrapper {
   display: flex;
   height: 100vh;
+ 
 
   .side-ber {
     color: #ffffff;
@@ -21,20 +22,19 @@
         height: 20px;
         width: 260px;
         margin: 0 20px;
-       
         display: flex;
         justify-content: space-between;
+          a {
+            color: #ffffff;
+          }
           .icon-display {
             width: 60px;
             display: flex;
             justify-content: flex-end;
               &__btn {
                 color: #ffffff;
-                text-decoration: none;
-              
-                &--edit {
+                text-decoration:none;
                 margin-right: 5px;
-                }
               }
           }
       }
@@ -44,11 +44,16 @@
       background-color: #2f3e51;
       &__messages {
         margin: 0 20px;
+        a{
+          text-decoration: none;
+        }
         &__group-name {
+          color: #fff;
           padding-top: 20px;
           font-size: 15px;
         }
         &__message{
+          color: #fff;
           padding-top: 5px;
           padding-bottom: 40px;
           font-size: 11px;
