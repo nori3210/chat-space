@@ -9,7 +9,6 @@
 
   .side-ber {
     color: #ffffff;
-    font-weight: bold;
     width: 300px;
     background-color: #253141;
     &__user-name {
@@ -18,6 +17,7 @@
       background-color: #253141;
       align-items: center;
       display: flex;
+      font-weight: bold; 
       &__side-box {
         height: 20px;
         width: 260px;
@@ -42,6 +42,7 @@
     &__group-list {
       height: calc(100vh - 100px);
       background-color: #2f3e51;
+      box-sizing: border-box;
       &__messages {
         margin: 0 20px;
         a{
@@ -136,6 +137,7 @@
       height: 90px;
       padding: 20px 50px 20px 40px;
       box-sizing: border-box;
+      padding: 20px;
       .form{
         display: flex;
         justify-content: space-between;
